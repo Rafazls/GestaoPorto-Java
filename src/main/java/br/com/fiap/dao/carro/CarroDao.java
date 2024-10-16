@@ -1,4 +1,4 @@
-package br.com.fiap.dao;
+package br.com.fiap.dao.carro;
 import java.util.List;
 import br.com.fiap.entites.Carro;
 

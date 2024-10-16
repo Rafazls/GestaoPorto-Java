@@ -1,5 +1,6 @@
-package br.com.fiap.dao;
+package br.com.fiap.dao.carro;
 
+import br.com.fiap.dao.carro.CarroDao;
 import br.com.fiap.entites.Carro;
 import java.sql.*;
 import java.util.ArrayList;

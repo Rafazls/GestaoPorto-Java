@@ -1,7 +1,7 @@
 package br.com.fiap.Service;
 
 import br.com.fiap.entites.Carro;
-import br.com.fiap.dao.CarroDao;
+import br.com.fiap.dao.carro.CarroDao;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package br.com.fiap.dao;
+package br.com.fiap.dao.cliente;
 import br.com.fiap.entites.Cliente;
 
 import java.util.List;

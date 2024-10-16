@@ -69,4 +69,6 @@ public class Carro {
     }
 
 
+    public void setNome(String gol) {
+    }
 }
