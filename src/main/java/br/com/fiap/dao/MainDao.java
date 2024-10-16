@@ -17,21 +17,20 @@ public class MainDao {
     public static void main(String[] args) {
         DatabaseConfig config = new DatabaseConfig(
                 "jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL",
-                "RMXXXXXX",
-                "suaSenha"
+                "RM554733",
+                "251003"
         );
 
         try (Connection connection = config.getConnection()) {
 
             // Cliente
             ClienteDao clienteDao = new ClienteDaoImpl(connection);
-            Cliente cliente1 = ClienteFactory.criarCliente(1L, "João Silva", "12345678900", 30);
+            Cliente cliente1 = ClienteFactory.criarCliente(1L, "João Silva", "123.456.789-09", 30);
             clienteDao.create(cliente1);
 
             // Seguro
-            SeguroDao seguroDao = new SeguroDaoImpl(connection);
-            Seguros seguro1 = SegurosFactory.criarSeguro("Carro", 1500.00, cliente1.getId());
-            seguroDao.create(seguro1);
+            SeguroDaoImpl seguroDao = new SeguroDaoImpl(connection);
+            seguroDao.create("Tipo1", 1000.00f, 1);
 
         } catch (SQLException e) {
             e.printStackTrace();

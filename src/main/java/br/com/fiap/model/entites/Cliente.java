@@ -7,7 +7,7 @@ public class Cliente {
     private String CPF;
     private int idade;
 
-    public Cliente(Long id, String name,String CPF, int idade) {
+    public Cliente(Long id, String name, String CPF, int idade) {
         this.id = id;
         this.name = name;
         setIdade(idade);
@@ -63,7 +63,7 @@ public class Cliente {
         if(isMaiorIdade(idade)){
             this.idade = idade;
         } else {
-            throw new RuntimeException();
+            throw new RuntimeException("Cliente menor de idade: " + idade);
         }
     }
 
@@ -75,7 +75,7 @@ public class Cliente {
         if(isCPFValido(CPF)){
             this.CPF = CPF;
         } else {
-            throw new RuntimeException();
+            throw new RuntimeException("CPF inválido: " + CPF);
         }
     }
 
@@ -97,14 +97,15 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Pessoa{" +
+        return "Cliente{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", idade=" + idade +
+                ", CPF='" + CPF + '\'' +
                 '}';
     }
 
-
-    public void setNome(String mariaSilva) {
+    public void setNome(String nome) {
+        this.name = nome;
     }
 }
