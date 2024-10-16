@@ -1,9 +1,10 @@
 package br.com.fiap.dao.cliente;
-import br.com.fiap.dao.cliente.ClienteDao;
-import br.com.fiap.entites.Cliente;
+
+import br.com.fiap.model.entites.Cliente;
+import br.com.fiap.factory.ClienteFactory;
 
 import java.sql.*;
-        import java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ClienteDaoImpl implements ClienteDao {
@@ -41,7 +42,8 @@ public class ClienteDaoImpl implements ClienteDao {
                 String nome = rs.getString("nome");
                 String cpf = rs.getString("cpf");
                 int idade = rs.getInt("idade");
-                clientes.add(new Cliente(id, nome, cpf, idade));
+                Cliente cliente = ClienteFactory.criarCliente(id, nome, cpf, idade);
+                clientes.add(cliente);
             }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -1,5 +1,5 @@
 package br.com.fiap.dao.cliente;
-import br.com.fiap.entites.Cliente;
+import br.com.fiap.model.entites.Cliente;
 
 import java.util.List;
 

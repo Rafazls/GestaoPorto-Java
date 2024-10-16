@@ -2,7 +2,7 @@ package br.com.fiap.Service;
 
 
 import br.com.fiap.dao.cliente.ClienteDao;
-import br.com.fiap.entites.Cliente;
+import br.com.fiap.model.entites.Cliente;
 
 import java.util.List;
 

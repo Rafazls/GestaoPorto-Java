@@ -1,4 +1,4 @@
-package br.com.fiap.entites;
+package br.com.fiap.model.entites;
 
 public class Cliente {
 
