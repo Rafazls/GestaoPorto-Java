@@ -32,10 +32,16 @@ public class MainDao {
             clienteDao.create(cliente1);
 
             // Criando e Inicializando CarroDao
-            CarroDao carroDao = new CarroDaoImpl(connection); // Crie a instância do CarroDao
+            CarroDao carroDao = new CarroDaoImpl(connection);
             Carro carro1 = new Carro(123456L, "Fusca", "Branco", 1980, "Volkswagen");
             carroDao.create(carro1);
 
+            // Lendo todos os Carros
+            List<Carro> listaCarros = carroDao.readAll();
+            for (Carro carro : listaCarros) {
+                System.out.println(carro.toString());
+            }
+            
             // Seguro
             SeguroDaoImpl seguroDao = new SeguroDaoImpl(connection);
             seguroDao.create("Tipo1", 1000.00f, 1);
