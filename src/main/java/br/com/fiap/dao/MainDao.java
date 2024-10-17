@@ -15,6 +15,7 @@ import br.com.fiap.model.entites.Seguros;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 public class MainDao {
     public static void main(String[] args) {
@@ -41,6 +42,19 @@ public class MainDao {
             for (Carro carro : listaCarros) {
                 System.out.println(carro.toString());
             }
+
+            // Atualizando um Carro
+            carro1.setNome("Gol");
+            carroDao.update(carro1);
+
+            // Verificando a atualização
+            listaCarros = carroDao.readAll();
+            for (Carro carro : listaCarros) {
+                System.out.println(carro.toString());
+            }
+
+            // Deletando um Carro
+            carroDao.delete(carro1.getChassi());
             
             // Seguro
             SeguroDaoImpl seguroDao = new SeguroDaoImpl(connection);
