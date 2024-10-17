@@ -1,12 +1,15 @@
 package br.com.fiap.dao;
 
 import br.com.fiap.config.DatabaseConfig;
+import br.com.fiap.dao.carro.CarroDao;
+import br.com.fiap.dao.carro.CarroDaoImpl;
 import br.com.fiap.dao.cliente.ClienteDao;
 import br.com.fiap.dao.cliente.ClienteDaoImpl;
 import br.com.fiap.dao.Seguro.SeguroDaoImpl;
 import br.com.fiap.dao.Seguro.SeguroDao;
 import br.com.fiap.factory.ClienteFactory;
 import br.com.fiap.factory.SegurosFactory;
+import br.com.fiap.model.entites.Carro;
 import br.com.fiap.model.entites.Cliente;
 import br.com.fiap.model.entites.Seguros;
 
@@ -27,6 +30,11 @@ public class MainDao {
             ClienteDao clienteDao = new ClienteDaoImpl(connection);
             Cliente cliente1 = ClienteFactory.criarCliente(1L, "João Silva", "123.456.789-09", 30);
             clienteDao.create(cliente1);
+
+            // Criando e Inicializando CarroDao
+            CarroDao carroDao = new CarroDaoImpl(connection); // Crie a instância do CarroDao
+            Carro carro1 = new Carro(123456L, "Fusca", "Branco", 1980, "Volkswagen");
+            carroDao.create(carro1);
 
             // Seguro
             SeguroDaoImpl seguroDao = new SeguroDaoImpl(connection);
