@@ -16,7 +16,7 @@ public class Seguros {
     }
 
     public Long getId() {
-        return id;
+         return id;
     }
 
     public void setId(Long id) {
@@ -24,7 +24,7 @@ public class Seguros {
     }
 
     public Long getIdCliente() {
-        return idCliente;
+         return idCliente;
     }
 
     public void setIdCliente(Long id_cliente) {
